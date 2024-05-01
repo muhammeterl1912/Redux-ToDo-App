@@ -16,8 +16,11 @@ const initialState = {
             ],
           }
       },
-      del: (state) => {
-      
+      del: (state,action) => {
+        return {
+            todoList: state.todoList.filter(item =>item.id !==action.payload)
+          }
+    
       },
       clr: () => {
       

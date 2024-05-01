@@ -1,7 +1,17 @@
 import okLogo from "../assets/ok.png";
 import deleteLogo from "../assets/delete.png";
-
+import { useDispatch } from "react-redux";
+import { del } from "../redux/toDoSlice";
 const TodoItem = ({ completed, text, id }) => {
+  const dispatch = useDispatch();
+
+
+
+
+  const handleDelete = () => {
+    dispatch(del(id));
+  };
+
   const styled = {
     textDecoration: "" ? "line-through" : "none",
     backgroundColor: "" ? "#A9A9A9" : "orange",
@@ -15,7 +25,7 @@ const TodoItem = ({ completed, text, id }) => {
           <img src={okLogo} className="w-[40px] m-[10px] cursor-pointer" alt="ok logo" />
         </span>
         <span>
-          <img src={deleteLogo} className="w-[40px] m-[10px] cursor-pointer" alt="delete logo" />
+          <img src={deleteLogo} className="w-[40px] m-[10px] cursor-pointer" alt="delete logo"  onClick={handleDelete}/>
         </span>
       </div>
     </div>
