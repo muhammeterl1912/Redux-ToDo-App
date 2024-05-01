@@ -1,16 +1,16 @@
-import TodoInput from "./TodoInput"
-import TodoList from "./TodoList"
+import TodoInput from "./TodoInput";
+import TodoList from "./TodoList";
 
 const Todo = () => {
   return (
-    <div>
-  <h2>Todo With Redux</h2>
+    <div className="flex flex-col items-center justify-start h-[100vh] p-5 gap-2 bg-yellow-200">
+   <h2 className="mt-3 mb-5 text-4xl uppercase animate-bounce">To-do With Redux</h2>
 
-  <TodoInput />
+
+      <TodoInput />
       <TodoList />
-
     </div>
-  )
-}
+  );
+};
 
-export default Todo
+export default Todo;
