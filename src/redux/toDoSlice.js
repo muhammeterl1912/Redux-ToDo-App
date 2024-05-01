@@ -26,6 +26,17 @@ const initialState = {
       
         return initialState
       },
+      toggle: (state,action) => {
+      
+        return {
+            todoList: state.todoList.map(item => {
+              if(item.id === action.payload.id) {
+                return { ...item, completed: action.payload.boolean };
+              }
+              return item; 
+            })
+          };
+      },
     },
   })
   export const { add,  del,  clr,toggle} = toDoSlice.actions
