@@ -1,9 +1,25 @@
-import React from 'react'
+import okLogo from "../assets/ok.png";
+import deleteLogo from "../assets/delete.png";
 
 const TodoItem = () => {
+  const styled = {
+    textDecoration: "" ? "line-through" : "none",
+    backgroundColor: "" ? "#A9A9A9" : "orange",
+    borderRadius: "5px",
+  };
   return (
-    <div>TodoItem</div>
-  )
-}
+    <div className="min-w-[40px] flex justify-between p-[10px] m-[10px]" style={styled}>
+      <h2 className="flex justify-center items-center"></h2>
+      <div>
+        <span>
+          <img src={okLogo} className="w-[40px] m-[10px] cursor-pointer" alt="ok logo" />
+        </span>
+        <span>
+          <img src={deleteLogo} className="w-[40px] m-[10px] cursor-pointer" alt="delete logo" />
+        </span>
+      </div>
+    </div>
+  );
+};
 
-export default TodoItem
+export default TodoItem;
