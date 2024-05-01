@@ -1,9 +1,16 @@
-import {  useSelector } from "react-redux"
+import {  useSelector,useDispatch } from "react-redux"
 import TodoItem from "./TodoItem";
+import { clr } from "../redux/toDoSlice";
 
 const TodoList = () => {
   const toDolist = useSelector((state) => state.toDo.todoList)
-  console.log(toDolist)
+  const dispatch = useDispatch()
+
+  const handleClearList = () => {
+
+    dispatch(clr())
+  }
+
   return (
     <div>
       <div>
@@ -12,7 +19,7 @@ const TodoList = () => {
         ))}
       </div>
       <div className="flex items-center justify-center mt-5">
-        <button className="p-4 bg-red-500 text-white w-20 rounded ">Clear</button>
+        <button className="p-4 bg-red-500 text-white w-20 rounded " onClick={handleClearList}>Clear</button>
       </div>
     </div>
   );

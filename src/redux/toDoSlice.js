@@ -19,11 +19,9 @@ const initialState = {
       del: (state) => {
       
       },
-      clr: (state) => {
-       return  state
-      },
-      toggle: (state, action) => {
- 
+      clr: () => {
+      
+        return initialState
       },
     },
   })
