@@ -18,6 +18,7 @@ const TodoInput = () => {
         type="text"
         className="p-3 rounded w-1/3 focus:outline-none"
         placeholder="Add Todo..."
+        value={text}
         onChange={(e) => setText(e.target.value)}
       />
       <button type="submit" className="p-4 bg-yellow-500 text-white w-20 rounded ">

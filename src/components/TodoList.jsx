@@ -1,16 +1,18 @@
-import React from "react";
+import {  useSelector } from "react-redux"
 import TodoItem from "./TodoItem";
 
 const TodoList = () => {
+  const toDolist = useSelector((state) => state.toDo.todoList)
+  console.log(toDolist)
   return (
     <div>
       <div>
-        {[1, 2].map((todo) => (
-          <TodoItem key={todo} />
+      {toDolist.map((todo) => (
+          <TodoItem key={todo.id} {...todo}  />
         ))}
       </div>
-      <div className="clear-wrapper">
-        <button className="clear-button">Clear</button>
+      <div className="flex items-center justify-center mt-5">
+        <button className="p-4 bg-red-500 text-white w-20 rounded ">Clear</button>
       </div>
     </div>
   );
